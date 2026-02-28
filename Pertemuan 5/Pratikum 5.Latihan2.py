@@ -5,16 +5,18 @@
 #=======================================================================================================
 
 #=======================================================================================================
-# Materi Rekursif L Faktorial
-# recursice case => 3! = 3 x 2 x 1
-# base case => 0 Berhenti
+# Latihan 2 : Tracing Rekursi
 #=======================================================================================================
 
-def faktorial(n):
-    # base case : jika n = 0, hasil = 1
+def countdown(n):
+    # base case : jika n = 0, berhenti
     if n == 0:
-        return 1
-    # recursive case : n × faktorial(n-1)
-    return n * faktorial(n - 1)
-print("=======Program Faktorial=======")
-print(faktorial(5))
+        print("Selesai")
+        return
+    
+    print("Masuk :", n)   # stacking (masuk ke stack)
+    countdown(n - 1)     # recursive call
+    print("Keluar :", n)  # unwinding (keluar dari stack)
+
+print("=======Program Tracing Countdown=======")
+countdown(3)

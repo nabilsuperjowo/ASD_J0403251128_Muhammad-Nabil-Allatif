@@ -5,16 +5,23 @@
 #=======================================================================================================
 
 #=======================================================================================================
-# Materi Rekursif L Faktorial
-# recursice case => 3! = 3 x 2 x 1
-# base case => 0 Berhenti
+# Latihan 5 : Generator PIN
 #=======================================================================================================
 
-def faktorial(n):
-    # base case : jika n = 0, hasil = 1
-    if n == 0:
-        return 1
-    # recursive case : n × faktorial(n-1)
-    return n * faktorial(n - 1)
-print("=======Program Faktorial=======")
-print(faktorial(5))
+def buat_pin(panjang, hasil=""):
+    # base case : jika panjang hasil = panjang PIN
+    if len(hasil) == panjang:
+        print("PIN :", hasil)
+        return
+    
+    # explore angka 0,1,2
+    for angka in ["0", "1", "2"]:
+        buat_pin(panjang, hasil + angka)
+
+print("=======Program Generator PIN=======")
+buat_pin(3)
+
+
+
+#Mencegah angka yang sama 
+#if angka not in hasil:

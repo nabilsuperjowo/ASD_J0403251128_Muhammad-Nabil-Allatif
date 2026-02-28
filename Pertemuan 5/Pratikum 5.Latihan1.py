@@ -5,16 +5,16 @@
 #=======================================================================================================
 
 #=======================================================================================================
-# Materi Rekursif L Faktorial
-# recursice case => 3! = 3 x 2 x 1
-# base case => 0 Berhenti
+# Latihan 1 : Rekursi Dasar
 #=======================================================================================================
 
-def faktorial(n):
-    # base case : jika n = 0, hasil = 1
+def pangkat(a, n):
+    # base case : jika pangkat 0, hasil = 1
     if n == 0:
         return 1
-    # recursive case : n × faktorial(n-1)
-    return n * faktorial(n - 1)
-print("=======Program Faktorial=======")
-print(faktorial(5))
+    
+    # recursive case : a × pangkat(a, n-1)
+    return a * pangkat(a, n - 1)
+
+print("=======Program Rekursi Pangkat=======")
+print(pangkat(2, 4))

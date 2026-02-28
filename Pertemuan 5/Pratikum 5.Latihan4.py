@@ -5,16 +5,20 @@
 #=======================================================================================================
 
 #=======================================================================================================
-# Materi Rekursif L Faktorial
-# recursice case => 3! = 3 x 2 x 1
-# base case => 0 Berhenti
+# Latihan 4 : Backtracking Dasar
 #=======================================================================================================
 
-def faktorial(n):
-    # base case : jika n = 0, hasil = 1
-    if n == 0:
-        return 1
-    # recursive case : n × faktorial(n-1)
-    return n * faktorial(n - 1)
-print("=======Program Faktorial=======")
-print(faktorial(5))
+def kombinasi(n, hasil=""):
+    # base case : jika panjang hasil = n
+    if len(hasil) == n:
+        print(hasil)
+        return
+    
+    # choose + explore tambah "A"
+    kombinasi(n, hasil + "A")
+    
+    # choose + explore tambah "B"
+    kombinasi(n, hasil + "B")
+
+print("=======Program Kombinasi Huruf=======")
+kombinasi(2)
