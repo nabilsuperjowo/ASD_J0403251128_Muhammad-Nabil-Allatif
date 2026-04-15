@@ -1,0 +1,42 @@
+#=======================================================================
+#nama : Muhammad Nabil Allatif
+#NIM : J0403251128
+#kelas : TPL B2
+#latihan 1 : Membuat postorder traversal
+#=======================================================================
+
+#class node digunakan untuk dasar dari tree
+
+from logging import root
+
+
+class Node: 
+    def __init__(self, data): 
+        self.data = data    #menyimpan nilai node
+        self.left = None    #child kiri
+        self.right = None   #child kanan
+        
+#Membuat fungsi post order : left > right > Root
+def postorder(node):
+    if node is not None:           #jika node tidak kosong
+        postorder(node.left)       #mengunjungi child kiri
+        postorder(node.right)      #mengunjungi child kanan
+        print(node.data, end=" ") #menampilkan data node
+        
+#membuat Tree
+root = Node("A")
+root.left = Node("B")
+root.right = Node("C")
+root.left.left = Node("D")
+root.left.right = Node("E")
+
+#menampilkan hasil postorder
+print("Hasil Traversal Postorder : ", end="")
+postorder(root)
+
+#penjelasan :
+#postorder adalah salah satu metode traversal pada tree yang mengunjungi node dalam urutan left
+# > right > Root. Pada contoh di atas, hasil postorder akan menampilkan urutan node sebagai berikut: D E B C A
+#1. Node adalah sebuah kelas yang digunakan untuk membuat struktur data pohon (tree).
+#2. Fungsi postorder adalah salah satu metode traversal pada tree yang mengunjungi node dalam urutan left > right > Root. Pada contoh di atas, hasil postorder akan menampilkan urutan node sebagai berikut: D E B C A
+#3. Traversal adalah proses mengunjungi setiap node dalam struktur data pohon (tree) dengan cara tertentu, seperti preorder, inorder, atau postorder. Traversal digunakan untuk mengakses dan memproses data dalam tree sesuai dengan urutan yang diinginkan.
